@@ -6,25 +6,28 @@ To write a python program to implement multivariate linear regression and predic
 2.	Anaconda – Python 3.7 Installation / Moodle-Code Runner
 ## Algorithm:
 ### Step1
+Import pandas as pd.
 <br>
 
 ### Step2
+Read the csv file.
 <br>
 
 ### Step3
+Get the value of X and y variables.
 <br>
 
 ### Step4
+Create the linear regression model and fit.
 <br>
 
 ### Step5
+Predict the CO2 emission of a car where the weight is 1000kg, and the volume is 1390cm3.
 <br>
 
 ## Program:
 ```
 
-import os
-os.environ["OPENBLAS_NUM_THREADS"]="1"
 import pandas as pd
 from sklearn import linear_model
 df = pd.read_csv("carsemission.csv")
@@ -33,20 +36,16 @@ y = df['CO2']
 regr = linear_model.LinearRegression()
 regr.fit(X, y)
 print('Coefficients:', regr.coef_)
-print('Intercept:', regr.intercept_)
-input_data = pd.DataFrame({'Weight': [3300], 'Volume': [1300]})
-predictedCO2 = regr.predict(input_data)
-print('Predicted CO2 for the corresponding weight and volume:', predictedCO2)
-
-
-
+print('Intercept:',regr.intercept_)
+predictedCO2 = regr.predict([[3300, 1300]])
+print('Predicted CO2 for the corresponding weight and volume',predictedCO2)
 
 
 ```
 ## Output:
+<img width="937" height="415" alt="443001241-3d8b9c74-da5d-4927-adf4-0e4cfee81b65" src="https://github.com/user-attachments/assets/34777f82-f5ea-4aa6-b80f-ee861765e842" />
 
 ### Insert your output
-<img width="795" height="120" alt="Screenshot 2026-03-24 200542" src="https://github.com/user-attachments/assets/ee9f9751-f7ba-4251-8668-1f66464dd6e1" />
 
 <br>
 
